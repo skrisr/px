@@ -19,7 +19,7 @@
 <body>
 
     <div id="toolbar">
-        <input type="text" id="address-bar" value="https://example.com" placeholder="URLを入力 (例: https://example.com)">
+        <input type="text" id="address-bar" value="https://example.com" placeholder="URLを入力">
         <button id="go-btn">移動</button>
     </div>
 
@@ -44,10 +44,10 @@
             viewport.innerHTML = '';
 
             try {
-                const proxyUrl = `https://corsproxy.io{encodeURIComponent(url)}`;
+                const proxyUrl = `https://killcors.com{encodeURIComponent(url)}`;
                 const response = await fetch(proxyUrl);
                 
-                if (!response.ok) throw new Error('Proxy server error');
+                if (!response.ok) throw new Error('Network error');
                 
                 let html = await response.text();
 
